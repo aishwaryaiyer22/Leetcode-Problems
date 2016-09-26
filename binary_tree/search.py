@@ -13,23 +13,23 @@ class Node:
 """
 
 def insert(root, value):
-	if(root == None):
+	if(root is None):
 		return Node(value)
 
 	if(value > root.key):
-		if (root.right == None):
+		if (root.right is None):
 			root.right = Node(value)
 		else:	
 			insert(root.right, value)
 
 	else:
-		if (root.left == None):
+		if (root.left is None):
 			root.left = Node(value)
 		else:	
 			insert(root.left, value)
 	
 def search(root, key):
-	if(root == None or root.key == key):
+	if(root is None or root.key == key):
 		return root
 
 	if(key < root.key):
@@ -55,8 +55,8 @@ inorder(root)
 insert(root,33)
 print "did 33 get inserted?"
 inorder(root)
-found = search(root, 98)
-if found != None:
+found = search(root, 33)
+if found is not None:
 	print "woho found {}".format(found.key)
 else:
 	print "not found"	
